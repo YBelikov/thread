@@ -25,7 +25,7 @@ public class PostReactionController {
         postReaction.setUserId(getUserId());
         var reaction = postsService.setReaction(postReaction);
 
-        if (reaction.isPresent() && reaction.get().getUserId() != getUserId()) {
+        if (reaction.isPresent() && reaction.get().getUserId() != getUserId() && reaction.get().getIsLike()) {
             // notify a user if someone (not himself) liked his post
             template.convertAndSend("/topic/like", "Your post was liked!");
         }

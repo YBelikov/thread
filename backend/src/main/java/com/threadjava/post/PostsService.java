@@ -45,4 +45,5 @@ public class PostsService {
         Post postCreated = postsCrudRepository.save(post);
         return PostMapper.MAPPER.postToPostCreationResponseDto(postCreated);
     }
+
 }

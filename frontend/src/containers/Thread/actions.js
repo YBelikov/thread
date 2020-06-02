@@ -22,6 +22,11 @@ const addPostAction = post => ({
   post
 });
 
+const editPostAction = post => ({
+   type: EDIT_POST,
+   post
+});
+
 const setExpandedPostAction = post => ({
   type: SET_EXPANDED_POST,
   post
@@ -50,6 +55,13 @@ export const addPost = post => async dispatch => {
   const newPost = await postService.getPost(id);
   dispatch(addPostAction(newPost));
 };
+
+export const updatePost = post => async dispatch => {
+  const {id} = await postService.editPost(post);
+  const updatedPost = await postService.getPost(id);
+  dispatch(editPostAction(editedPost));
+}
+
 
 export const toggleExpandedPost = postId => async dispatch => {
   const post = postId ? await postService.getPost(postId) : undefined;

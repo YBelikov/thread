@@ -38,4 +38,12 @@ public class PostsController {
         template.convertAndSend("/topic/new_post", item);
         return item;
     }
+
+    @PutMapping
+    public PostCreationResponseDto update(@RequestBody PostCreationDto updatedPostDto){
+        updatedPostDto.setUserId(getUserId());
+        var item = postsService.create(updatedPostDto);
+        template.convertAndSend("/topic/updated_post", item);
+        return item;
+    }
 }

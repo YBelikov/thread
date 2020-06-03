@@ -18,6 +18,14 @@ export const addPost = async request => {
   return response.json();
 };
 
+export const editPost = async request => {
+  const response = await callWebApi({
+    endpoint: '/api/posts',
+    type: 'PUT',
+    request
+  });
+  return response.json();
+};
 export const getPost = async id => {
   const response = await callWebApi({
     endpoint: `/api/posts/${id}`,

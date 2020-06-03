@@ -7,7 +7,7 @@ import java.util.UUID;
 @Data
 public class CommentReactionsDto {
     private UUID id;
-    private Boolean iLike;
+    private Boolean isLike;
 }
 
 

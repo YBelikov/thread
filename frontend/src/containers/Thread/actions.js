@@ -22,10 +22,7 @@ const addPostAction = post => ({
   post
 });
 
-const editPostAction = post => ({
-   type: EDIT_POST,
-   post
-});
+
 
 const setExpandedPostAction = post => ({
   type: SET_EXPANDED_POST,

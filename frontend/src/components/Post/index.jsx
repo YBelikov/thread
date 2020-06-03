@@ -50,6 +50,9 @@ const Post = ({ post, likePost, dislikePost, toggleExpandedPost, sharePost }) =>
         <Label basic size="small" as="a" className={styles.toolbarBtn} onClick={() => sharePost(id)}>
           <Icon name="share alternate" />
         </Label>
+        <Label basic size="small" as="a" className={styles.toolbarBtn} floated = "right">
+          <Icon name="edit" />
+        </Label>
       </Card.Content>
     </Card>
   );

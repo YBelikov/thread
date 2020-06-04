@@ -14,4 +14,5 @@ public interface CommentReactionRepository extends CrudRepository<CommentReactio
             + " FROM CommentReaction r"
             + " WHERE r.user.id = :userId AND r.comment.id = :commentId")
     Optional<CommentReaction> getCommentReaction(@Param("userId") UUID userId, @Param("commentId") UUID commentId);
+
 }
